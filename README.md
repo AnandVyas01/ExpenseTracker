@@ -87,6 +87,7 @@ POST /expenses
   "description": "Lunch",
   "date": "2026-02-01"
 }
+```
 
 Get Expenses
 GET /expenses?category=Food&sort=datedesc
