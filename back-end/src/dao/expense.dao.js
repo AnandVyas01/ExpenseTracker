@@ -8,6 +8,10 @@ export const findByExpenseId = (expenseId) => {
   return Expense.findOne({ expenseId });
 };
 
+export const getExpense = (filters) => {
+  return Expense.findOne(filters);
+};
+
 export const getExpenses = (filters, sort) => {
   return Expense.find(filters).sort(sort);
 };

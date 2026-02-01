@@ -4,13 +4,21 @@ export const addExpense = async (expenseDTO) => {
   try {
     return await expenseDAO.createExpense(expenseDTO);
   } catch (error) {
-    // Duplicate request (retry-safe)
     if (error.code === 11000) {
       return expenseDAO.findByExpenseId(expenseDTO.expenseId);
     }
     throw error;
   }
 };
+
+export const findOne = (filters) => {
+    try{
+        return expenseDAO.getExpense(filters);
+    } catch(e){
+        throw e;
+    }
+}
+
 
 export const listExpenses = ({ category, sort }) => {
   const filters = {};
