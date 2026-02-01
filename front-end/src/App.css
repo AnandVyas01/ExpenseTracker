@@ -1,0 +1,132 @@
+/* Global */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f0f2f5;
+  margin: 0;
+  padding: 0;
+}
+
+/* Headings */
+h1 {
+  text-align: center;
+  font-size: 2.5rem;
+  margin: 20px 0;
+  color: #2c3e50;
+}
+
+h2 {
+  text-align: center;
+  font-size: 1.8rem;
+  margin-bottom: 15px;
+  color: #34495e;
+}
+
+/* Form styling */
+form {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 20px;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+input, select, button {
+  padding: 10px;
+  font-size: 14px;
+  border-radius: 8px;
+  border: 1px solid #dcdde1;
+}
+
+input, select {
+  width: 160px;
+}
+
+button {
+  background-color: #1abc9c;
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+button:hover {
+  background-color: #16a085;
+}
+
+/* Filter + Sort */
+.filter-sort {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+select {
+  cursor: pointer;
+}
+
+/* Expense List */
+ul {
+  list-style: none;
+  padding: 0;
+  max-width: 650px;
+  margin: 0 auto;
+}
+
+li {
+  background-color: #fff;
+  margin-bottom: 12px;
+  padding: 15px 20px;
+  border-radius: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 3px 12px rgba(0,0,0,0.08);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+li:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+}
+
+/* Category badge */
+.expense-category {
+  display: inline-block;
+  padding: 4px 10px;
+  border-radius: 12px;
+  color: #fff;
+  font-size: 0.85rem;
+  font-weight: bold;
+  margin-right: 8px;
+}
+
+.category-Food { background-color: #e74c3c; }
+.category-Transport { background-color: #3498db; }
+.category-Shopping { background-color: #9b59b6; }
+.category-Other { background-color: #95a5a6; }
+
+/* Total */
+.total-amount {
+  text-align: center;
+  font-weight: bold;
+  margin: 20px 0;
+  font-size: 20px;
+  color: #2c3e50;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  form {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  input, select {
+    width: 80%;
+  }
+}
