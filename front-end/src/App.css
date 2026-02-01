@@ -105,10 +105,23 @@ li:hover {
   margin-right: 8px;
 }
 
-.category-Food { background-color: #e74c3c; }
-.category-Transport { background-color: #3498db; }
-.category-Shopping { background-color: #9b59b6; }
-.category-Other { background-color: #95a5a6; }
+.expense-category {
+  display: inline-block;
+  padding: 4px 10px;
+  border-radius: 12px;
+  color: #fff;
+  font-size: 0.85rem;
+  font-weight: bold;
+  margin-right: 8px;
+}
+
+.category-food { background-color: #e74c3c; }
+.category-transport { background-color: #3498db; }
+.category-shopping { background-color: #9b59b6; }
+
+.category-other, .expense-category:not([class*="category-"]) {
+  background-color: #95a5a6;
+}
 
 /* Total */
 .total-amount {

@@ -1,5 +1,7 @@
 export default function ExpenseItem({ expense }) {
-  const categoryClass = `category-${expense.category || "Other"}`;
+  let categoryClass = expense.category ? expense.category.toLowerCase() : "other";
+
+    categoryClass = categoryClass.replace(/\s+/g, "-").replace(/[^a-zA-Z0-9-]/g, "");
 
   return (
     <li>

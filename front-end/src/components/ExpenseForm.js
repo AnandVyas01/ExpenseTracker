@@ -9,14 +9,16 @@ export default function ExpenseForm({ onExpenseAdded }) {
     description: "",
     date: ""
   });
+  const [expenseId, setExpenseId] = useState(uuidv4());
 
   const handleChange = (e) => setForm({ ...form, [e.target.name]: e.target.value });
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await createExpense({ ...form, expenseId: uuidv4() });
+      await createExpense({ ...form, expenseId });
       setForm({ amount: "", category: "", description: "", date: "" });
+       setExpenseId(uuidv4());
       onExpenseAdded();
     } catch (err) {
       console.error(err);
