@@ -9,7 +9,7 @@ export default function ExpenseItem({ expense }) {
         <span className={`expense-category ${categoryClass}`}>
           {expense.category || "Other"}
         </span>
-        ${parseFloat(expense.amount.$numberDecimal).toFixed(2)}
+        ₹{parseFloat(expense.amount.$numberDecimal).toFixed(2)}
         {expense.description && ` - ${expense.description}`}
       </div>
       <div>{new Date(expense.date).toLocaleDateString()}</div>

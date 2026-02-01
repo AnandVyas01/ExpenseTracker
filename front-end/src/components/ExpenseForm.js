@@ -7,6 +7,8 @@ export default function ExpenseForm({ onExpenseAdded }) {
   const [expenseId, setExpenseId] = useState(uuidv4());
   const [errors, setErrors] = useState({});
 
+  const [loading, setLoading] = useState(false);
+
   const handleChange = (e) => setForm({ ...form, [e.target.name]: e.target.value });
 
   const validate = () => {
@@ -24,6 +26,7 @@ export default function ExpenseForm({ onExpenseAdded }) {
     e.preventDefault();
     const errs = validate();
     setErrors(errs);
+    setLoading(true);
     if (Object.keys(errs).length > 0) return;
 
     try {
@@ -35,6 +38,8 @@ export default function ExpenseForm({ onExpenseAdded }) {
     } catch (err) {
       console.error(err);
       alert("Error adding expense");
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -59,7 +64,9 @@ export default function ExpenseForm({ onExpenseAdded }) {
         {errors.date && <div style={{ color: "red" }}>{errors.date}</div>}
       </div>
 
-      <button type="submit">Add Expense</button>
+      <button type="submit" disabled={loading}>
+        {loading ? "Saving..." : "Add Expense"}
+      </button>
     </form>
   );
 }
